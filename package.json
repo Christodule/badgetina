@@ -6,7 +6,7 @@
   "author": "Christodule <zcedric121@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "expo start --dev-client --tunnel",
+    "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "clear": "expo r -c",
