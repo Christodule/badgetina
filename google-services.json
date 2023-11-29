@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "165833672097",
+    "project_id": "drbarbeccu",
+    "storage_bucket": "drbarbeccu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165833672097:android:1d4f6e96c36e38b382f7e0",
+        "android_client_info": {
+          "package_name": "com.drbarbeccu.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165833672097-5a27sf47nccjqtqukdgnod9u3vaquob5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.drbarbeccu.com",
+            "certificate_hash": "a1254fc3d10ed3e96adc6e9f71d1a15598f89e96"
+          }
+        },
+        {
+          "client_id": "165833672097-1mrkkmk3c6mib1hn3dmrhc4iqdg132tk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLgSDoAwUUhivzBqLg_VFoM27Ns78VZ90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165833672097-1mrkkmk3c6mib1hn3dmrhc4iqdg132tk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165833672097-tgntp18hn72teeuet3vgaqeeb07tdset.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.drbarbeccu.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
