@@ -12,10 +12,10 @@ import {
     Platform,
     Linking,
     Keyboard,
-    ScrollView
+    ScrollView, TouchableOpacity
 } from "react-native";
 import MaterialButtonDark from "../components/MaterialButtonDark";
-import { TouchableOpacity } from "react-native-gesture-handler";
+/*import { TouchableOpacity } from "react-native-gesture-handler";*/
 import { useDispatch, useSelector } from 'react-redux';
 import { api } from '../../common/src';
 import { colors } from '../common/theme';

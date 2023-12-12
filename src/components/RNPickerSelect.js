@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Keyboard, Modal, Platform, Text, TextInput, View, StyleSheet } from 'react-native';
+import { Keyboard, Modal, Platform, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { Picker } from '@react-native-picker/picker';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+/*import {TouchableOpacity} from 'react-native-gesture-handler';*/
 
 export default class RNPickerSelect extends PureComponent {
     static propTypes = {

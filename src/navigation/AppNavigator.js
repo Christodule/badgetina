@@ -7,29 +7,14 @@ import {
     Platform,
 } from 'react-native';
 import {
-    DriverRating,
-    ProfileScreen,
-    PaymentDetails,
-    RideListPage,
-    MapScreen,
-    BookedCabScreen,
-    RideDetails,
-    SearchScreen,
-    EditProfilePage,
+
     AboutPage,
-    OnlineChat,
-    WalletDetails,
-    AddMoneyScreen,
-    SelectGatewayPage,
+
     LoginScreen,
-    DriverTrips,
-    WithdrawMoneyScreen,
-    DriverIncomeScreen,
+
     RegistrationPage,
     Notifications as NotificationsPage,
-    SettingsScreen,
-    CarsScreen,
-    CarEditScreen
+   
 } from '../screens';
 var { height, width } = Dimensions.get('window');
 import { useSelector } from "react-redux";
@@ -39,8 +24,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../common/theme';
 import { Icon } from "react-native-elements";
 import { MAIN_COLOR } from '../common/sharedFunctions';
-import { CommonActions } from '@react-navigation/native';
-import TabsNavigator from './tabs'
+
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -90,122 +75,7 @@ export default function AppContainer() {
             /> 
     };
     
-    const TabRoot = () => {
-        return (
-            <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    animationEnabled: Platform.OS == 'android'? false : true,
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName;
-                        if (route.name === 'Map' || route.name === 'DriverTrips') {
-                            iconName = focused
-                              ? 'home'
-                              : 'home-outline';
-                        } else if (route.name === 'RideList') {
-                            iconName = focused ? 'list-circle' : 'list-circle-outline';
-                        } else if (route.name === 'Wallet') {
-                            iconName = focused ? 'wallet' : 'wallet-outline';
-                        } else if (route.name === 'Settings') {
-                            iconName = focused ? 'settings' : 'settings-outline';
-                        }
-                        return <Ionicons name={iconName} size={size} color={color} />;
-                    },
-                    tabBarActiveTintColor: MAIN_COLOR,
-                    tabBarInactiveTintColor: colors.HEADER,
-                    tabBarBadge: route.name == 'RideList' && activeBookings && activeBookings.length > 0 ? activeBookings.length :null,
-                    tabBarBadgeStyle:{transform: [{ scaleX: isRTL ? -1 : 1 }]},
-                    tabBarIndicatorStyle: {
-                        borderBottomColor: '#C2D5A8',
-                        borderBottomWidth: 2,
-                      },
-                    tabBarStyle: { height: hasNotch ? 80:55,transform:isRTL? [{scaleX: -1}] :[{scaleX: 1}]},
-                    tabBarLabelStyle:{ fontSize: 14,transform:isRTL? [{scaleX: -1}] :[{scaleX: 1}]},
-                })}
-            >
-                {auth.profile && auth.profile.usertype && auth.profile.usertype == 'customer' ?
-                    <Tab.Screen name="Map" 
-                        component={MapScreen} 
-                        options={{title: t('home'),headerShown: false}}
-                        listeners={({navigation,route})=>({
-                            tabPress: e => {
-                                e.preventDefault()
-                                navigation.dispatch(
-                                    CommonActions.reset({
-                                        index: 0,
-                                        routes: [{name: route.name}]
-                                    })
-                                )
-                            },
-                        })}
-                    />
-                : null}
-                {auth.profile && auth.profile.usertype && auth.profile.usertype == 'driver' ?
-                    <Tab.Screen 
-                        name="DriverTrips" 
-                        component={DriverTrips} 
-                        options={{ title: t('task_list'),...screenOptions }}
-                        listeners={({navigation,route})=>({
-                            tabPress: e => {
-                                e.preventDefault()
-                                navigation.dispatch(
-                                    CommonActions.reset({
-                                        index: 0,
-                                        routes: [{name: route.name}]
-                                    })
-                                )
-                            },
-                        })}
-                    />
-                : null}
-                <Tab.Screen name="RideList"
-                    component={RideListPage} 
-                    options={{ title: t('ride_list_title'),...screenOptions }}
-                    listeners={({navigation,route})=>({
-                        tabPress: e => {
-                            e.preventDefault()
-                            navigation.dispatch(
-                                CommonActions.reset({
-                                    index: 0,
-                                    routes: [{name: route.name}]
-                                })
-                            )
-                        },
-                    })}
-                />
-                <Tab.Screen name="Wallet" 
-                    component={WalletDetails} 
-                    options={{ title: t('my_wallet_tile'),...screenOptions }}
-                    listeners={({navigation,route})=>({
-                        tabPress: e => {
-                            e.preventDefault()
-                            navigation.dispatch(
-                                CommonActions.reset({
-                                    index: 0,
-                                    routes: [{name: route.name}]
-                                })
-                            )
-                        },
-                    })}
-                />
-                <Tab.Screen name="Settings" 
-                    component={SettingsScreen} 
-                    options={{ title: t('settings_title') ,...screenOptions}}
-                    listeners={({navigation,route})=>({
-                        tabPress: e => {
-                            e.preventDefault()
-                            navigation.dispatch(
-                                CommonActions.reset({
-                                    index: 0,
-                                    routes: [{name: route.name}]
-                                })
-                            )
-                        },
-                    })}
-                />
-            </Tab.Navigator>
-        );
-    }
-
+  
     return (
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
@@ -215,9 +85,11 @@ export default function AppContainer() {
                 }}
             >
                 {auth.profile && auth.profile.uid ?
-                    
-                    <TabsNavigator/>
-                    
+                    <Stack.Group>
+
+                        <Stack.Screen name="About" component={AboutPage} options={{ title: t('about_us_menu'),...screenOptions }}/>
+                       
+                    </Stack.Group>
                     :
                     <Stack.Group screenOptions={{ headerShown: false }}>
                         <Stack.Screen name="Login" component={LoginScreen}/>

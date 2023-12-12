@@ -83,34 +83,7 @@ export default {
             }
         }
     },
-    plugins: [
-        "expo-localization",
-        "@react-native-firebase/app",
-        "@react-native-firebase/auth",
-        ["./react-native-maps-plugin", "custom"],
-        [
-            "expo-notifications",
-            {
-                sounds: [
-                    "./assets/sounds/horn.wav",
-                    "./assets/sounds/repeat.wav"
-                ]
-            }
-        ],
-        [
-            "expo-build-properties",
-            {
-                "ios": {
-                    "useFrameworks": "static"
-                }
-            }
-        ],
-        [
-            "expo-image-picker",
-            {
-                "photosPermission": "This app uses Photo Library for uploading your profile picture.",
-                "cameraPermission": "This app uses the camera to take your profile picture."
-            }
-        ]
-    ]
+   
+    
+    
 };

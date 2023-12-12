@@ -17,7 +17,7 @@ import {
   FirebaseProvider,
   store
 } from './common/src';
-import AppCommon from './AppCommon';
+
 import { FirebaseConfig } from './config/FirebaseConfig';
 import { colors } from './src/common/theme';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -62,7 +62,7 @@ export default function App() {
         require('./assets/images/bg.jpg'),
         require('./assets/images/intro.jpg'),
         require('./assets/images/g4.gif'),
-        require('./assets/images/lodingDriver.gif')
+ 
       ]),
       Font.loadAsync({
         'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
@@ -105,9 +105,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <FirebaseProvider config={FirebaseConfig} AsyncStorage={AsyncStorage}>
-        <AppCommon>
+
           <AppContainer />
-        </AppCommon>
+
       </FirebaseProvider>
     </Provider>
   );
